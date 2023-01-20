@@ -269,6 +269,7 @@ class EventsController {
     this.view.tableBody.addEventListener('click', e=> {
       const thisEvent = e.target.parentNode.parentNode.parentNode;
       const domID = thisEvent.id;
+      console.log(thisEvent);
       if(e.target.classList.contains('delete-btn')) {
         if(!domID || domID === 'undefined') {
           this.view.tableBody.removeChild(thisEvent);
@@ -294,8 +295,7 @@ class EventsController {
           eventStartDate.readOnly = false;
           eventEndDate.readOnly = false;
           e.target.innerHTML = saveIcon;
-          e.target.setAttribute('btn_type', 'save');
-          console.log(e.target.getAttribute('btn_type'));
+          // e.target.setAttribute('btn_type', 'save');
           eventTitle.focus();
         } else {
           const titleValue = eventTitle.value;
@@ -311,8 +311,9 @@ class EventsController {
                 endDate: endDateValue
               }).then(res => {
                 console.log(res);
+                thisEvent.setAttribute('id', res.id);
               })
-            } else if(eventBtn1.getAttribute('btn_type') === 'save') {
+            } else if(eventBtn1.getAttribute('btn_type') === 'edit') {
               this.model.updateEvent(+domID, {
                 eventName: titleValue,
                 startDate: startDateValue,
