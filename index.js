@@ -185,7 +185,7 @@ class EventsView {
       button1.setAttribute('btn_type', 'add');
     } else {
       button1.innerHTML = editIcon;
-      button1.setAttribute('btn_type', 'save');
+      button1.setAttribute('btn_type', 'edit');
     }
   
     const deleteButton = document.createElement('button');
@@ -310,7 +310,7 @@ class EventsController {
               }).then(res => {
                 console.log(res);
               })
-            } else if(eventBtn1.getAttribute('btn_type') === 'save') {
+            } else if(eventBtn1.getAttribute('btn_type') === 'edit') {
               this.model.updateEvent(+domID, {
                 eventName: titleValue,
                 startDate: startDateValue,
