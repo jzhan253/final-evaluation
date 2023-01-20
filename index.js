@@ -167,6 +167,27 @@ class EventsView {
     const eventActions = document.createElement('div');
     eventActions.classList.add('event-actions');
 
+    // const button1 = document.createElement('svg');
+    // button1.classList.add('event-button-1');
+    // if(adding) {
+    //   button1.xmlns = 'http://www.w3.org/2000/svg';
+    //   button1.focusable = true;
+    //   button1.viewBox = '0 0 24 24';
+    //   const buttonPath = document.createElement('path');
+    //   buttonPath.d = 'M12 6V18M18 12H6'
+    //   button1.value = 'Add';
+    //   button1.append(buttonPath);
+    // } else {
+    //   button1.textContent = 'Edit';
+    // }
+  
+    // const deleteButton = document.createElement('button');
+    // deleteButton.classList.add('delete-btn');
+    // deleteButton.textContent = 'Delete';
+
+    // eventActions.append(button1, deleteButton);
+    // tableCol4.append(eventActions);
+
     const button1 = document.createElement('button');
     button1.classList.add('event-button-1');
     if(adding) {
@@ -188,12 +209,44 @@ class EventsView {
   }
 
   renderEvents(events) {
-    this.tableBody.innerHTML = `<tr class="table-header-row">
-                                    <td>Event</td>
-                                    <td>Start</td>
-                                    <td>End</td>
-                                    <td>Actions</td>
-                                  </tr>`;
+  //   this.tableBody.innerHTML = `<tr class="table-header-row">
+  //   <td>
+  //     <h1>Event</h1>
+  //   </td>
+  //   <td>
+  //     <h1>Start</h1>
+  //   </td>
+  //   <td>
+  //     <h1>End</h1>
+  //   </td>
+  //   <td>
+  //     <h1>Actions</h1>
+  //   </td>
+  // </tr>`;
+    const headerRow = document.createElement('tr');
+    headerRow.classList.add('table-header-row');
+    const td1 = document.createElement('td');
+    const eventHeader = document.createElement('h1');
+    eventHeader.textContent = 'Event';
+    td1.append(eventHeader);
+
+    const td2 = document.createElement('td');
+    const startHeader = document.createElement('h1');
+    startHeader.textContent = 'Start';
+    td2.append(startHeader);
+
+    const td3 = document.createElement('td');
+    const endHeader = document.createElement('h1');
+    endHeader.textContent = 'End';
+    td3.append(endHeader);
+
+    const td4 = document.createElement('td');
+    const actionHeader = document.createElement('h1');
+    actionHeader.textContent = 'Actions';
+    td4.append(actionHeader);
+
+    headerRow.append(td1, td2, td3, td4)
+    this.tableBody.append(headerRow);
     events.forEach(event => {
       this.renderEvent(event, false);
     })
