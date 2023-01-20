@@ -302,8 +302,6 @@ class EventsController {
           if(!titleValue || titleValue === '' || !startDateValue || startDateValue === '' || !endDateValue || !endDateValue === '') {
             alert('please enter a valid value');
           } else {
-            console.log(eventBtn1);
-            console.log(eventBtn1.getAttribute('btn_type'));
             if(eventBtn1.getAttribute('btn_type') === 'add') {
               this.model.addEvent({
                 eventName: titleValue,
@@ -325,6 +323,7 @@ class EventsController {
             eventStartDate.readOnly = true;
             eventEndDate.readOnly = true;
             e.target.innerHTML = editIcon;
+            e.target.setAttribute('btn_type', 'edit');
           }
         }
       } 
