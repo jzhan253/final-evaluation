@@ -184,6 +184,7 @@ class EventsView {
 
     tableRow.append(tableCol1, tableCol2, tableCol3, tableCol4);
     this.tableBody.append(tableRow);
+    return eventTitle;
   }
 
   renderEvents(events) {
@@ -226,7 +227,8 @@ class EventsController {
   setUpAddEvent() {
     this.view.addButton.addEventListener('click', e => {
       e.preventDefault();
-      this.view.renderEvent({}, true);
+      const eventTitle = this.view.renderEvent({}, true);
+      eventTitle.focus();
     })
   }
 
