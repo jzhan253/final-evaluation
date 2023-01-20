@@ -110,6 +110,8 @@ input:focus:read-only {
 
 .event-button-1 {
   background-color: var(--blue);
+  height: 30px;
+  width: 50px;
   border: none;
   border-radius: 5px;
   color: white;
@@ -117,6 +119,8 @@ input:focus:read-only {
 
 .delete-btn {
   background-color: var(--red);
+  height: 30px;
+  width: 50px;
   border: none;
   border-radius: 5px;
   color: white;
