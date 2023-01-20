@@ -23,7 +23,6 @@ body {
 }
 
 .app {
-  /* display: flex; */
   text-align: center;
   padding: 3rem;
   margin-top: 3rem;
@@ -32,7 +31,6 @@ body {
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   border-radius: 10px;
   min-width: 1000px;
-  /* justify-content: center; */
 
 }
 

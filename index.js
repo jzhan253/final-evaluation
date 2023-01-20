@@ -53,17 +53,6 @@ API = (() => {
   }
 })();
 
-// API tests
-// API.getEvents().then(res => {
-//   console.log(res);
-// })
-
-// API.postEvent({'eventName': 'AAA'}).then(res => res);
-
-// API.deleteEvent(3).then(res => res);
-
-// API.updateEvent(2, {'eventName': 'EDC'}).then(res => res);
-
 // Model
 class EventsModel {
   #events;
@@ -295,7 +284,6 @@ class EventsController {
           eventStartDate.readOnly = false;
           eventEndDate.readOnly = false;
           e.target.innerHTML = saveIcon;
-          // e.target.setAttribute('btn_type', 'save');
           eventTitle.focus();
         } else {
           const titleValue = eventTitle.value;
