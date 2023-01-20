@@ -294,6 +294,8 @@ class EventsController {
           eventStartDate.readOnly = false;
           eventEndDate.readOnly = false;
           e.target.innerHTML = saveIcon;
+          e.target.setAttribute('btn_type', 'save');
+          console.log(e.target.getAttribute('btn_type'));
           eventTitle.focus();
         } else {
           const titleValue = eventTitle.value;
@@ -310,7 +312,7 @@ class EventsController {
               }).then(res => {
                 console.log(res);
               })
-            } else if(eventBtn1.getAttribute('btn_type') === 'edit') {
+            } else if(eventBtn1.getAttribute('btn_type') === 'save') {
               this.model.updateEvent(+domID, {
                 eventName: titleValue,
                 startDate: startDateValue,
