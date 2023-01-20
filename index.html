@@ -10,6 +10,45 @@
 </head>
 
 <body>
+  <div class="app">
+    <div class="app__add-btn">
+      <button class="add-btn">Add New Event</button>
+    </div>
+    <div class="app__event-table">
+      <table class="event-table">
+        <thead class="table-header">
+          <tr>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr class="table-header-row">
+            <td>Event</td>
+            <td>Start</td>
+            <td>End</td>
+            <td>Actions</td>
+          </tr>
+          <tr id="1" class="event-row">
+            <td class="event-col-1">
+              <input class="event-title" type="text" value="Music Festival" readonly />
+            </td>
+            <td class="event-col-2">
+              <input class="event-start-date" type="date" readonly />
+            </td>
+            <td class="event-col-3">
+              <input class="event-end-date" type="date" readonly />
+            </td>
+            <td class="event-col-4">
+              <div class="event-actions">
+                <button class="event-button-1">Edit</button>
+                <button class="delete-btn">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
   <script src="index.js"></script>
 </body>
 

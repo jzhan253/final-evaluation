@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(166, 238, 251);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.app {
+  /* display: flex; */
+  text-align: center;
+  padding: 3rem;
+  margin-top: 3rem;
+  background-color: white;
+  width: 80%;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+  border-radius: 10px;
+  /* justify-content: center; */
+
+}
+
+.app__add-btn {
+  padding-bottom: 1rem;
+}
+
+.event-table {
+  width: 100%;
+}
+
+table,
+td {
+  border: 1px solid #333;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
