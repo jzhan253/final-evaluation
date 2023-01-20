@@ -97,10 +97,29 @@ input:focus {
   background-color: var(--white);
 }
 
+input:focus:read-only {
+  background-color: var(--tan);
+  outline: none;
+}
+
 .event-actions {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.event-button-1 {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.delete-btn {
+  background-color: var(--red);
+  border: none;
+  border-radius: 5px;
+  color: white;
 }
 
 svg {
