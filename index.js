@@ -219,14 +219,17 @@ class EventsView {
     events.forEach(event => {
       this.renderEvent(event, false);
     })
+
   }
 }
 
 // Controller
 class EventsController {
+  #selectedEvents;
   constructor(model, view) {
     this.model = model;
     this.view = view;
+    this.#selectedEvents = [];
     this.init();
   }
 
@@ -258,7 +261,6 @@ class EventsController {
     this.view.tableBody.addEventListener('click', e=> {
       const thisEvent = e.target.parentNode.parentNode.parentNode;
       const domID = thisEvent.id;
-      console.log(thisEvent);
       if(e.target.classList.contains('delete-btn')) {
         if(!domID || domID === 'undefined') {
           this.view.tableBody.removeChild(thisEvent);
@@ -317,7 +319,23 @@ class EventsController {
             e.target.setAttribute('btn_type', 'edit');
           }
         }
-      } 
+      } else {
+        if(e.target.classList.contains('event-title')) {
+          // console.log('event-title clicked');
+          const thisRow = e.target.parentNode.parentNode;
+          console.log(thisRow);
+          const rowId = thisRow.getAttribute('id');
+          thisRow.classList.add('selected-event');
+          this.#selectedEvents.push(rowId);
+          console.log('selected events:', this.#selectedEvents);
+          
+          // const deleteAll = document.createElement('button');
+          // deleteAll.classList.add('delete-all');
+          // const this
+
+
+        }
+      }
     })
   }
 }
